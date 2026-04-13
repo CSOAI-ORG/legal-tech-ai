@@ -1,0 +1,40 @@
+{
+  "name": "@meok-global/legal-tech-ai",
+  "version": "1.0.0",
+  "description": "Assess compliance for AI in legal services. Covers contract analysis, e-discovery, legal research, predictive case outcomes, and unauthorized practice of law.",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "legal-tech-ai-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^22.12.0"
+  },
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meok-global/mcp-servers.git",
+    "directory": "packages/legal-tech-ai"
+  },
+  "author": "MEOK AI Labs — Cyber Security Global Alliance",
+  "keywords": [
+    "mcp",
+    "ai-governance",
+    "compliance",
+    "legal-tech-ai"
+  ]
+}
