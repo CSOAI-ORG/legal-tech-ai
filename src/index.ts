@@ -49,6 +49,21 @@ const LegalTechAiComplianceShape = {
   }
 );
 
+// ---------------------------------------------------------------------------
+// MCP 2026-07-28 wire - header-add migration (2026-10-08)
+// ---------------------------------------------------------------------------
+// Transport: stdio (StdioServerTransport) - no HTTP headers at runtime, so
+// Mcp-Method / Mcp-Name are not applicable until this server is exposed over
+// HTTP, where the ingress must be routed through a 2026-07-28 shim
+// (mcp2026_shim.py, vendored at the repo root as the reference implementation:
+// validate Mcp-Method / Mcp-Name, emit params._meta.protocolVersion =
+// "2026-07-28", never emit Mcp-Session-Id).
+// No JS SDK pin was changed: no @modelcontextprotocol/sdk release speaks
+// 2026-07-28 yet - inventing a pin would be a false claim (wave-1 rule).
+// Refs: MIGRATION_NOTE.md, MCP_2026_WIRE_MIGRATION_PLAN_2026-10-07.md (3) + (4).
+// ---------------------------------------------------------------------------
+
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
